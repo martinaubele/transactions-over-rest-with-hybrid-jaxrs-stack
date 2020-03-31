@@ -3,7 +3,7 @@ package com.atomikos.jaxrshibernate;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
-import com.atomikos.jaxrshibernate.service.HelloServiceImpl;
+import com.atomikos.jaxrshibernate.service.AccountServiceImpl;
 import com.atomikos.remoting.jaxrs.TransactionAwareRestContainerFilter;
 import com.atomikos.remoting.taas.TransactionProvider;
 import com.atomikos.remoting.twopc.AtomikosRestPort;
@@ -17,6 +17,6 @@ public class JerseyConfig extends ResourceConfig {
 		register(ParticipantsProvider.class);
 		register(TransactionProvider.class);
 		register(AtomikosRestPort.class);
-		register(HelloServiceImpl.class);
+		register(AccountServiceImpl.class);
 	}
 }

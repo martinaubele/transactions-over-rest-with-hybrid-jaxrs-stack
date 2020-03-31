@@ -21,7 +21,7 @@ import sample.rs.service.api.HelloService;
 @Path("/account")
 @Service
 @Transactional
-public class HelloServiceImpl implements HelloService {
+public class AccountServiceImpl implements HelloService {
 
 	@Autowired
 	private AccountRepository accountRepository;
