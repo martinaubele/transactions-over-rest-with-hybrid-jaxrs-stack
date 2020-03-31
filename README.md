@@ -2,7 +2,9 @@
 
 Sample to demonstrate how to propagate transactional context accross 2 web services through rest, each service using a different JAXRS implementation. 
 
-## One "server" with Jersey + Spring DATA (Hibernate)
+## One "account server" with Jersey + Spring DATA (Hibernate)
+
+This service manages accounts and is called by the client inside a transaction.
 
 ## One "client" with CXF client + Spring DATA
 
