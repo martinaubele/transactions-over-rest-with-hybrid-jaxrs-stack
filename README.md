@@ -8,6 +8,6 @@ This service manages accounts and is called by the client inside a transaction.
 
 ## One "client" with CXF client + Spring DATA
 
-The client creates a Payment in its local database and creates an account through a REST call.
+The client creates a payment in its local database and creates an account through a transactional REST call.
 
 Thanks to a "Command line Runner" the demo makes a call that works (commit) and another one that fail (rollback).
