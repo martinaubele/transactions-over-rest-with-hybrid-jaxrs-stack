@@ -1,13 +1,14 @@
-# transactions-over-rest-with-hybrid-jaxrs-stack
+# Sample for https://github.com/atomikos/transactions-essentials/issues/186
 
-Sample to demonstrate how to propagate transactional context accross 2 web services through rest, each service using a different JAXRS implementation. 
+cascadeList is lost on complex callbacks #186
 
-## One "account server" with Jersey + Spring DATA (Hibernate)
+Steps to reproduce the bug:
 
-This service manages accounts and is called by the client inside a transaction.
+1) Start JaxrsApplication1, JaxrsApplication2 and JaxrsApplication3
+2) Open http://localhost:8080/transactions/complexCall in your browser
 
-## One "client" with CXF client + Spring DATA
+Your will see a NullPointerException in JaxrsApplication2
 
-The client creates a payment in its local database and creates an account through a transactional REST call.
+java.lang.NullPointerException: null
+	at com.atomikos.remoting.twopc.AtomikosRestPort.prepare(AtomikosRestPort.java:134) ~[transactions-remoting-6.0.1-SNAPSHOT.jar:na]
 
-Thanks to a "Command line Runner" the demo makes a call that works (commit) and another one that fail (rollback).
